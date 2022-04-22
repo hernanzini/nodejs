@@ -1,6 +1,6 @@
 ### **E-Shop backend with express and mongodb atlas**
 
-- First create a .env file in the project's root folder, wich contains something like this:
+- First create a .env file in the project's root folder, wich must contain something like this:
    ```properties
    API_URL = /api/v1
    CONNECTION_STRING = mongodb+srv://mongodbtest:xxxxxxxxxx@cluster0.xxxx.mongodb.net/eshop-database?retryWrites=true&w=majority
