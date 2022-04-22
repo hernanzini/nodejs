@@ -7,6 +7,6 @@
    secret = E60D72F553A3E831AF7CDAB2F3F60A32ECCC3E27835752A437F6DA93A3F7A8D4
    ```
 - Then run:
--   npm install 
--   npm start
+   + `npm install`
+   + `npm start`
 
