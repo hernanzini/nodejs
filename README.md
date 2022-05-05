@@ -1,2 +1,5 @@
-# nodejs
-NodeJS tests and projects
+# [Node.js](https://nodejs.org/)
+
+## Tests and projects
+
+**Author:** Angel Hernán Zini

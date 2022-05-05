@@ -5,6 +5,6 @@
    CONNECTION_STRING = mongodb+srv://mongodbtest:xxxxxxxxxx@cluster0.xxxx.mongodb.net/blog?retryWrites=true&w=majority
    ```
 - Then run:
--   npm install 
--   npm start
-
+   + `npm install`
+   + `npm start`
+   
