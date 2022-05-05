@@ -1,0 +1,48 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/nav.ejs") %>
+
+      <div class="create-blog content">
+        <form id="edit_form">
+          <input type="hidden" id="_id" name="_id" value="<%=blog._id %>">
+          <label for="title">Blog title:</label>
+          <input type="text" id="title" name="title" value="<%= blog.title %>" required>
+          <label for="snippet">Blog snippet:</label>
+          <input type="text" id="snippet" name="snippet" value="<%= blog.snippet %>" required>
+          <label for="body">Blog body:</label>
+          <textarea id="body" name="body" required><%= blog.body %></textarea>
+          <button>Save changes</button>
+        </form>
+      </div>
+
+      <%- include("../partials/footer.ejs") %>
+
+        <script>
+          theform = document.getElementById("edit_form");
+          theform.addEventListener("submit", saveChanges);
+
+          function saveChanges(e) {
+            //const id = document.querySelector('#_id');
+            //const endpoint = `/blogs/edit/${id.value}`;
+            const endpoint = '/blogs/edit';
+
+            form_data = new FormData(theform);
+            const data = new URLSearchParams();
+            for (const pair of form_data) {
+              data.append(pair[0], pair[1]);
+            }
+
+            fetch(endpoint, {
+              method: 'PUT',
+              body: data
+            })
+              .then(response => response.json())
+              .then(data => window.location.href = data.redirect)
+              .catch(err => console.log(err));
+          };
+        </script>
+  </body>
+
+</html>

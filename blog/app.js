@@ -15,12 +15,14 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(result => app.listen(3000))
   .catch(err => console.log(err));
 
+mongoose.set('useFindAndModify', false);
+
 // register view engine
 app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));  //parse the body of a post request
 app.use(morgan('dev'));
 app.use((req, res, next) => {
   res.locals.path = req.path;
